@@ -1,0 +1,9 @@
+@mixin labels {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: rgb(78, 110, 126);
+    background-color: rgb(228, 244, 253);
+    padding: .95rem 1.2rem;
+    border-radius: 4px 0 0 4px;
+    z-index: 1;
+}

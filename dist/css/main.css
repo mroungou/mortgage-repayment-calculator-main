@@ -38,19 +38,80 @@ main {
 .calculator input {
   box-sizing: border-box;
   border-color: rgb(107, 148, 168);
+  font-size: 1.125rem;
+  color: rgb(19, 48, 65);
+  font-weight: 700;
 }
-.calculator input[type=number] {
+.calculator input[type=text] {
   width: 100%;
   border-radius: 4px;
   padding: 1rem;
 }
 .calculator .inputs {
   margin-bottom: 1.5rem;
+}
+.calculator .input-amt {
   display: grid;
 }
-.calculator .currency {
+.calculator .input-amt .currency {
+  margin: auto auto auto 0.1rem;
   font-weight: 700;
   font-size: 1.125rem;
   color: rgb(78, 110, 126);
   background-color: rgb(228, 244, 253);
+  padding: 0.95rem 1.2rem;
+  border-radius: 4px 0 0 4px;
+  z-index: 1;
+}
+.calculator .input-amt input {
+  padding-left: 3.75rem;
+}
+.calculator .input-amt .currency, .calculator .input-amt input {
+  grid-area: 1/-1;
+}
+.calculator .input-years {
+  display: grid;
+}
+.calculator .input-years .years {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: rgb(78, 110, 126);
+  background-color: rgb(228, 244, 253);
+  padding: 0.95rem 1.2rem;
+  border-radius: 4px 0 0 4px;
+  z-index: 1;
+  margin: auto 0.1rem auto auto;
+}
+.calculator .input-years .years, .calculator .input-years input {
+  grid-area: 1/-1;
+}
+.calculator .input-rate {
+  display: grid;
+}
+.calculator .input-rate .rate {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: rgb(78, 110, 126);
+  background-color: rgb(228, 244, 253);
+  padding: 0.95rem 1.2rem;
+  border-radius: 4px 0 0 4px;
+  z-index: 1;
+  margin: auto 0.1rem auto auto;
+}
+.calculator .input-rate .rate, .calculator .input-rate input {
+  grid-area: 1/-1;
+}
+.calculator .mortgage-type .repayment,
+.calculator .mortgage-type .interest {
+  padding: 1rem;
+  border: 2px solid rgb(107, 148, 168);
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: rgb(19, 48, 65);
+}
+.calculator .mortgage-type .repayment input,
+.calculator .mortgage-type .interest input {
+  margin-right: 1rem;
 }/*# sourceMappingURL=main.css.map */

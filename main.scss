@@ -41,9 +41,12 @@ main {
     input{
         box-sizing: border-box;
         border-color: rgba(107, 148, 168, 1);
+        font-size: 1.125rem;
+        color: rgb(19, 48, 65);
+        font-weight: 700;
     }
 
-    input[type=number] {
+    input[type=text] {
         width: 100%;
         border-radius: 4px;
         padding: 1rem;
@@ -51,13 +54,61 @@ main {
     
     .inputs {
         margin-bottom: 1.5rem;
-        display: grid;
     }
-    .currency {
-        font-weight: 700;
-        font-size: 1.125rem;
-        color: rgb(78, 110, 126);
-        background-color: rgb(228, 244, 253);
+    .input-amt {
+        display: grid;
+        .currency {
+            margin: auto auto auto .1rem;
+            @include variables.labels;
+        }
+
+        input {
+            padding-left: 3.75rem;
+        }
+
+        .currency, input {
+            grid-area: 1/-1;
+        }
     }
 
+    .input-years {
+        display: grid;
+        .years {
+           @include variables.labels;
+           margin: auto .1rem auto auto;
+        }
+        
+        .years, input {
+            grid-area: 1/-1;
+        }
+    }
+    
+    .input-rate {
+        display: grid;
+        .rate {
+            @include variables.labels;
+            margin: auto .1rem auto auto;
+        }
+
+        .rate, input {
+            grid-area: 1/-1;
+        }
+    }
+
+    .mortgage-type {
+        .repayment, 
+        .interest {
+            padding: 1rem;
+            border: 2px solid rgba(107, 148, 168, 1);
+            border-radius: 4px;
+            margin-bottom: .75rem;
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: rgb(19, 48, 65);
+
+            input {
+                margin-right: 1rem;
+            }
+        }
+    }
 }

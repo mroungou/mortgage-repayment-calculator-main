@@ -18,21 +18,29 @@
         <form action="" class="calculator" id="calculator">
 			<div class="mortgage-amt inputs">
 				<label for="mortgage-amt">Mortgage Amount</label>
-				<input type="number">
-				<div class="currency">£</div>
+				<div class="input-amt">
+					<span class="currency">£</span>
+					<input type="text">
+				</div>
 			</div>
 			<div class="mortgage-term inputs">
 				<label for="mortgage-term">Mortgage Term</label>
-				<input type="number">
+				<div class="input-years">
+					<input type="text">
+					<span class="years">years</span>
+				</div>
 			</div>
 			<div class="interest-rate inputs">
 				<label for="interest-rate">Interest Rate</label>
-				<input type="number">
+				<div class="input-rate">
+					<input type="text">
+					<span class="rate">%</span>
+				</div>
 			</div>
 			<div class="mortgage-type inputs">
 				<label for="mortgage-type">Mortgage Type</label>
-				<input type="radio" name="mortgage-type" id="repayment">Repayment</input>
-				<input type="radio" name="mortgage-type" id="interest">Interest Only</input>
+				<div class="repayment"><input type="radio" name="mortgage-type" id="repayment">Repayment</input></div>
+				<div class="interest"><input type="radio" name="mortgage-type" id="interest">Interest Only</input></div>
 			</div>
 			<div class="btn-calculate" id="btn-calculate">Calculate Repayments</div>
 		</form>
