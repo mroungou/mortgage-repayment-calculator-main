@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+main {
+  margin: 2rem 1.5rem;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+.header h1 {
+  color: rgb(19, 48, 65);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 125%;
+  margin-bottom: 0.5rem;
+}
+.header .clear-btn {
+  color: rgb(78, 110, 126);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 150%;
+}
+
+.calculator label {
+  color: rgb(78, 110, 126);
+  font-size: 1rem;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 1rem;
+}
+.calculator input {
+  box-sizing: border-box;
+  border-color: rgb(107, 148, 168);
+}
+.calculator input[type=number] {
+  width: 100%;
+  border-radius: 4px;
+  padding: 1rem;
+}
+.calculator .inputs {
+  margin-bottom: 1.5rem;
+  display: grid;
+}
+.calculator .currency {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: rgb(78, 110, 126);
+  background-color: rgb(228, 244, 253);
+}/*# sourceMappingURL=main.css.map */

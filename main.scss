@@ -1,0 +1,63 @@
+@use 'fonts';
+@use 'variables';
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+main {
+    margin: 2rem 1.5rem;
+}
+.header {
+    h1 {
+        color: rgb(19, 48, 65);
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 125%;
+        margin-bottom: .5rem;
+    }
+    
+    .clear-btn {
+        color: rgb(78, 110, 126);
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 150%;
+    }
+    margin-bottom: 1.5rem;
+}
+
+.calculator {
+    label {
+        color: rgb(78, 110, 126);
+        font-size: 1rem;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    input{
+        box-sizing: border-box;
+        border-color: rgba(107, 148, 168, 1);
+    }
+
+    input[type=number] {
+        width: 100%;
+        border-radius: 4px;
+        padding: 1rem;
+    }
+    
+    .inputs {
+        margin-bottom: 1.5rem;
+        display: grid;
+    }
+    .currency {
+        font-weight: 700;
+        font-size: 1.125rem;
+        color: rgb(78, 110, 126);
+        background-color: rgb(228, 244, 253);
+    }
+
+}
