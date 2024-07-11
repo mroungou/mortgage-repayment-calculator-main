@@ -1,17 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
-* {
+*, *:before, *:after {
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-main {
-  margin: 2rem 1.5rem;
-}
-
 .header {
+  margin: 2rem 1.5rem 1.5rem;
   margin-bottom: 1.5rem;
 }
 .header h1 {
@@ -26,8 +24,12 @@ main {
   font-weight: 500;
   font-size: 1rem;
   line-height: 150%;
+  text-decoration: underline;
 }
 
+.calculator {
+  margin: 0 1.5rem 2rem;
+}
 .calculator label {
   color: rgb(78, 110, 126);
   font-size: 1rem;
@@ -37,6 +39,7 @@ main {
 }
 .calculator input {
   box-sizing: border-box;
+  border: 1px solid;
   border-color: rgb(107, 148, 168);
   font-size: 1.125rem;
   color: rgb(19, 48, 65);
@@ -101,17 +104,122 @@ main {
 .calculator .input-rate .rate, .calculator .input-rate input {
   grid-area: 1/-1;
 }
-.calculator .mortgage-type .repayment,
-.calculator .mortgage-type .interest {
+.calculator .form-control {
   padding: 1rem;
-  border: 2px solid rgb(107, 148, 168);
+  border: 1px solid rgb(107, 148, 168);
   border-radius: 4px;
-  margin-bottom: 0.75rem;
+  color: rgb(19, 48, 65);
+  font-weight: 700;
+  font-size: 1.125rem;
+  display: grid;
+  grid-template-columns: 1rem auto;
+  gap: 0.5rem;
+}
+.calculator .form-control input[type=radio] {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  background-color: #fff;
+  margin: 0;
+  color: rgb(78, 110, 126);
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0.15rem solid rgb(78, 110, 126);
+  border-radius: 50%;
+  transform: translateY(0.2rem);
+  display: grid;
+  place-content: center;
+}
+.calculator .form-control input[type=radio]::before {
+  content: "";
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  border: 0.15rem solid rgb(216, 219, 47);
+  box-shadow: inset 1rem 1rem rgb(216, 219, 47);
+}
+.calculator .form-control input[type=radio]:checked::before {
+  transform: scale(1);
+}
+
+.btn-calculate {
+  background-color: rgb(216, 219, 47);
   font-size: 1.125rem;
   font-weight: 700;
-  color: rgb(19, 48, 65);
+  line-height: 125%;
+  padding: 1rem;
+  border-radius: 999px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
 }
-.calculator .mortgage-type .repayment input,
-.calculator .mortgage-type .interest input {
-  margin-right: 1rem;
+.btn-calculate img {
+  margin: auto;
+}
+
+.results {
+  background-color: rgb(19, 48, 65);
+  padding: 2rem 0;
+}
+.results .empty-results {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.results .empty-results h2 {
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  margin: 1rem 0;
+}
+.results .empty-results img {
+  display: block;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+.results p {
+  font-size: 1rem;
+  color: rgb(154, 190, 213);
+  line-height: 150%;
+}
+.results .completed-results {
+  padding: 2rem 1.5rem;
+}
+.results .completed-results h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  margin-bottom: 1rem;
+}
+
+.pmt-amt {
+  padding: 2rem 1rem;
+  background: rgba(0, 0, 0, 0.25);
+  margin-top: 2rem;
+  border-radius: 8px;
+  border-top: 4px solid rgb(216, 219, 47);
+}
+.pmt-amt .monthly {
+  color: rgb(154, 190, 213);
+  font-size: 1rem;
+}
+.pmt-amt .monthly .monthly-pmt {
+  display: block;
+  font-size: 2.5rem;
+  color: rgb(216, 219, 47);
+  font-weight: 700;
+  margin-top: 1rem;
+}
+.pmt-amt .line {
+  border-bottom: 2px solid rgba(154, 190, 213, 0.25);
+  margin: 1rem 0;
+}
+.pmt-amt .total {
+  color: rgb(154, 190, 213);
+}
+.pmt-amt .total .total-pmt {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
 }/*# sourceMappingURL=main.css.map */

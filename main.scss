@@ -1,17 +1,16 @@
 @use 'fonts';
 @use 'variables';
 
-* {
+*, *:before, *:after {
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: "Plus Jakarta Sans", sans-serif;
 }
-main {
-    margin: 2rem 1.5rem;
-}
 .header {
+    margin: 2rem 1.5rem 1.5rem;
     h1 {
         color: rgb(19, 48, 65);
         font-weight: 700;
@@ -25,11 +24,13 @@ main {
         font-weight: 500;
         font-size: 1rem;
         line-height: 150%;
+        text-decoration: underline;
     }
     margin-bottom: 1.5rem;
 }
 
 .calculator {
+    margin: 0 1.5rem 2rem;
     label {
         color: rgb(78, 110, 126);
         font-size: 1rem;
@@ -40,6 +41,7 @@ main {
 
     input{
         box-sizing: border-box;
+        border: 1px solid;
         border-color: rgba(107, 148, 168, 1);
         font-size: 1.125rem;
         color: rgb(19, 48, 65);
@@ -95,20 +97,130 @@ main {
         }
     }
 
-    .mortgage-type {
-        .repayment, 
-        .interest {
-            padding: 1rem;
-            border: 2px solid rgba(107, 148, 168, 1);
-            border-radius: 4px;
-            margin-bottom: .75rem;
-            font-size: 1.125rem;
-            font-weight: 700;
-            color: rgb(19, 48, 65);
+    // radio buttons custom
+    .form-control {
+     padding: 1rem;
+     border: 1px solid rgb(107, 148, 168);
+     border-radius: 4px;
+     color: rgb(19, 48, 65);
+     font-weight: 700;
+     font-size: 1.125rem;
+     display: grid;
+     grid-template-columns: 1rem auto;
+     gap: .5rem;
+ 
+     input[type="radio"] {
+         appearance: none;
+         -webkit-appearance: none;
+         background-color: #fff;
+         margin: 0;
+         color: rgb(78, 110, 126);
+         width: 1.25rem;
+         height: 1.25rem;
+         border: .15rem solid rgb(78, 110, 126);
+         border-radius: 50%;
+         transform: translateY(.2rem);
+         display: grid;
+         place-content: center;
+        }
+     
+     input[type="radio"]::before {
+         content: "";
+         width: .65rem;
+         height: .65rem;
+         border-radius: 50%;
+         transform: scale(0);
+         transition: 120ms transform ease-in-out;
+         border: .15rem solid rgb(216, 219, 47);
+         box-shadow: inset 1rem 1rem rgb(216, 219, 47);
+        }
+     
+     
+     input[type="radio"]:checked::before {
+         transform: scale(1);
+        }
+    }
+}
 
-            input {
-                margin-right: 1rem;
-            }
+.btn-calculate {
+    background-color: rgb(216, 219, 47);
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 125%;
+    padding: 1rem;
+    border-radius: 999px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    img {
+        margin: auto;
+    }
+}
+
+.results {
+    background-color: rgb(19, 48, 65);
+    padding: 2rem 0;
+
+    .empty-results {
+        text-align: center;
+        h2 {
+            font-size: 1.5rem;
+            color: rgb(255, 255, 255);
+            margin: 1rem 0;
+        }
+        img {
+            display: block;
+            margin: auto;
+            margin-bottom: 1rem;
+        }
+        padding-bottom: 2rem;
+    }
+    p {
+        font-size: 1rem;
+        color: rgb(154, 190, 213);
+        line-height: 150%;
+    }
+    
+    .completed-results {
+        padding: 2rem 1.5rem;
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: rgb(255, 255, 255);
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.pmt-amt {
+    padding: 2rem 1rem;
+    background: rgba(0, 0, 0, 0.25);
+    margin-top: 2rem;
+    border-radius: 8px;
+    border-top: 4px solid rgb(216, 219, 47);
+    .monthly {
+        color: rgb(154, 190, 213);
+        font-size: 1rem;
+        .monthly-pmt {
+            display: block;
+            font-size: 2.5rem;
+            color: rgb(216, 219, 47);
+            font-weight: 700;
+            margin-top: 1rem;
+        }
+    }
+    .line {
+        border-bottom: 2px solid rgba(154, 190, 213, 0.25);
+        margin: 1rem 0;
+    }
+
+    .total {
+        color: rgb(154, 190, 213);
+        .total-pmt {
+            display: block;
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            color: rgb(255, 255, 255);
+            font-weight: 700;
         }
     }
 }
