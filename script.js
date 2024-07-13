@@ -66,6 +66,7 @@ clearBtn.addEventListener('click', () => {
     radios.forEach(radio => {
         radio.checked = false;
         hasNoError(radio.parentElement)
+        radio.parentElement.parentElement.classList.remove('checked');
     })
 
     emptyResultsDiv.style.display = 'block';
@@ -84,13 +85,27 @@ function validateRadios(radios) {
     });
 
     if (!isChecked) {
-        hasError(radios[0].parentElement); 
+        hasError(radios[0].parentElement.parentElement); 
         return false;
     } else {
-        hasNoError(radios[0].parentElement);
+        hasNoError(radios[0].parentElement.parentElement);
         return true;
     }
 }
+
+interestOption.addEventListener('change', () => {
+    if(interestOption.checked) {
+        interestOption.parentElement.parentElement.classList.add('checked');
+        repaymentOption.parentElement.parentElement.classList.remove('checked')
+    }
+})
+
+repaymentOption.addEventListener('change', () => {
+    if (repaymentOption.checked) {
+        repaymentOption.parentElement.parentElement.classList.add('checked');
+        interestOption.parentElement.parentElement.classList.remove('checked')
+    }
+})
 
 calculateBtn.addEventListener('click', () => {
     let allInputFields = true;

@@ -104,7 +104,7 @@ body {
 .calculator .input-rate .label, .calculator .input-rate input {
   grid-area: 1/-1;
 }
-.calculator .form-control {
+.calculator .test {
   padding: 1rem;
   border: 1px solid rgb(107, 148, 168);
   border-radius: 4px;
@@ -115,7 +115,7 @@ body {
   grid-template-columns: 1rem auto;
   gap: 0.5rem;
 }
-.calculator .form-control input[type=radio] {
+.calculator .test input[type=radio] {
   -moz-appearance: none;
        appearance: none;
   -webkit-appearance: none;
@@ -130,7 +130,7 @@ body {
   display: grid;
   place-content: center;
 }
-.calculator .form-control input[type=radio]::before {
+.calculator .test input[type=radio]::before {
   content: "";
   width: 0.65rem;
   height: 0.65rem;
@@ -140,7 +140,7 @@ body {
   border: 0.15rem solid rgb(216, 219, 47);
   box-shadow: inset 1rem 1rem rgb(216, 219, 47);
 }
-.calculator .form-control input[type=radio]:checked::before {
+.calculator .test input[type=radio]:checked::before {
   transform: scale(1);
 }
 
@@ -238,7 +238,7 @@ body {
   font-weight: 500;
 }
 
-.checked .form-control {
+.checked .test {
   border: 1px solid rgb(216, 219, 47);
   background-color: rgba(216, 219, 47, 0.15);
 }
