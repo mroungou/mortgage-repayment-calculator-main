@@ -20,7 +20,7 @@
 			<div class="mortgage-amt inputs">
 				<label for="mortgage-amt">Mortgage Amount</label>
 				<div class="input-amt">
-					<span class="currency">£</span>
+					<span class="label currency">£</span>
 					<input type="text" id="mortgage-amt">
 				</div>
 			</div>
@@ -28,25 +28,29 @@
 				<label for="mortgage-term">Mortgage Term</label>
 				<div class="input-years">
 					<input type="text" id="years">
-					<span class="years">years</span>
+					<span class="label years">years</span>
 				</div>
 			</div>
 			<div class="interest-rate inputs">
 				<label for="interest-rate">Interest Rate</label>
 				<div class="input-rate">
 					<input type="text" id="interest-rate">
-					<span class="rate">%</span>
+					<span class="label rate">%</span>
 				</div>
 			</div>
 			<div class="mortgage-type inputs">
 				<label for="mortgage-type">Mortgage Type</label>
 				<label class="form-control">
-					<input type="radio" name="mortgage-type" id="repayment"></input>
-					Repayment
+					<!-- <div class="test"> -->
+						<input type="radio" name="mortgage-type" id="repayment"></input>
+						Repayment
+					<!-- </div> -->
 				</label>
 				<label class="form-control">
-					<input type="radio" name="mortgage-type" id="interest"></input>
-					Interest Only
+					<!-- <div class="test"> -->
+						<input type="radio" name="mortgage-type" id="interest"></input>
+						Interest Only
+					<!-- </div> -->
 				</label>
 			</div>
 			<div class="btn-calculate" id="btn-calculate">
@@ -56,7 +60,7 @@
 		</form>
     </section>
     <section class="results">
-        <div class="empty-results">
+        <div class="empty-results" id="empty-results">
 			<!-- Empty results start -->
 			 <img src="./assets/images/illustration-empty.svg" alt="Calculator Illustration">
 			<h2>Results shown here</h2>
@@ -66,7 +70,7 @@
 			</p>
 			<!-- Empty results end -->
 		</div>
-		<div class="completed-results">
+		<div class="completed-results" id="completed-results">
 			
 			<!-- Completed results start -->
 			
@@ -77,11 +81,11 @@
 			</p>
 			<section class="pmt-amt">
 				<div class="monthly">Your monthly repayments 
-					<span class="monthly-pmt" id="monthly-pmt">£1,797.74</span>
+					<span class="monthly-pmt" id="monthly-pmt"></span>
 				</div>
 				<div class="line"></div>
 				<div class="total">Total you'll repay over the term 
-					<span class="total-pmt" id="total-pmt">£539,322.94</span>
+					<span class="total-pmt" id="total-pmt"></span>
 				</div>
 			</section>
 			<!-- Completed results end -->

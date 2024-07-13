@@ -59,7 +59,7 @@ body {
     }
     .input-amt {
         display: grid;
-        .currency {
+        .label {
             margin: auto auto auto .1rem;
             @include variables.labels;
         }
@@ -68,31 +68,31 @@ body {
             padding-left: 3.75rem;
         }
 
-        .currency, input {
+        .label, input {
             grid-area: 1/-1;
         }
     }
 
     .input-years {
         display: grid;
-        .years {
+        .label {
            @include variables.labels;
            margin: auto .1rem auto auto;
         }
         
-        .years, input {
+        .label, input {
             grid-area: 1/-1;
         }
     }
     
     .input-rate {
         display: grid;
-        .rate {
+        .label {
             @include variables.labels;
             margin: auto .1rem auto auto;
         }
 
-        .rate, input {
+        .label, input {
             grid-area: 1/-1;
         }
     }
@@ -158,8 +158,6 @@ body {
 
 .results {
     background-color: rgb(19, 48, 65);
-    padding: 2rem 0;
-
     .empty-results {
         text-align: center;
         h2 {
@@ -172,7 +170,7 @@ body {
             margin: auto;
             margin-bottom: 1rem;
         }
-        padding-bottom: 2rem;
+        padding: 2rem 0;
     }
     p {
         font-size: 1rem;
@@ -182,6 +180,7 @@ body {
     
     .completed-results {
         padding: 2rem 1.5rem;
+        display: none;
         h3 {
             font-size: 1.5rem;
             font-weight: 700;
@@ -222,5 +221,32 @@ body {
             color: rgb(255, 255, 255);
             font-weight: 700;
         }
+    }
+}
+
+.has-error {
+    input[type="text"] {
+        border-color: rgb(215, 51, 40);
+    }
+    .label {
+        color: rgb(255, 255, 255) !important;
+        background-color: rgb(215, 51, 40) !important;
+    }
+
+    .error-message {
+        color: rgb(215, 51, 40);
+        font-size: .875rem;
+        margin-top: .75rem;
+        font-weight: 500;
+    }
+}
+
+.checked{
+    .form-control {
+        border: 1px solid rgb(216, 219, 47);
+        background-color: rgba(216, 219, 47, 0.15);
+    }
+    input[type="radio"] {
+        border: .15rem solid rgb(216, 219, 47) !important;
     }
 }

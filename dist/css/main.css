@@ -56,7 +56,7 @@ body {
 .calculator .input-amt {
   display: grid;
 }
-.calculator .input-amt .currency {
+.calculator .input-amt .label {
   margin: auto auto auto 0.1rem;
   font-weight: 700;
   font-size: 1.125rem;
@@ -69,13 +69,13 @@ body {
 .calculator .input-amt input {
   padding-left: 3.75rem;
 }
-.calculator .input-amt .currency, .calculator .input-amt input {
+.calculator .input-amt .label, .calculator .input-amt input {
   grid-area: 1/-1;
 }
 .calculator .input-years {
   display: grid;
 }
-.calculator .input-years .years {
+.calculator .input-years .label {
   font-weight: 700;
   font-size: 1.125rem;
   color: rgb(78, 110, 126);
@@ -85,13 +85,13 @@ body {
   z-index: 1;
   margin: auto 0.1rem auto auto;
 }
-.calculator .input-years .years, .calculator .input-years input {
+.calculator .input-years .label, .calculator .input-years input {
   grid-area: 1/-1;
 }
 .calculator .input-rate {
   display: grid;
 }
-.calculator .input-rate .rate {
+.calculator .input-rate .label {
   font-weight: 700;
   font-size: 1.125rem;
   color: rgb(78, 110, 126);
@@ -101,7 +101,7 @@ body {
   z-index: 1;
   margin: auto 0.1rem auto auto;
 }
-.calculator .input-rate .rate, .calculator .input-rate input {
+.calculator .input-rate .label, .calculator .input-rate input {
   grid-area: 1/-1;
 }
 .calculator .form-control {
@@ -160,11 +160,10 @@ body {
 
 .results {
   background-color: rgb(19, 48, 65);
-  padding: 2rem 0;
 }
 .results .empty-results {
   text-align: center;
-  padding-bottom: 2rem;
+  padding: 2rem 0;
 }
 .results .empty-results h2 {
   font-size: 1.5rem;
@@ -183,6 +182,7 @@ body {
 }
 .results .completed-results {
   padding: 2rem 1.5rem;
+  display: none;
 }
 .results .completed-results h3 {
   font-size: 1.5rem;
@@ -222,4 +222,26 @@ body {
   font-size: 1.5rem;
   color: rgb(255, 255, 255);
   font-weight: 700;
+}
+
+.has-error input[type=text] {
+  border-color: rgb(215, 51, 40);
+}
+.has-error .label {
+  color: rgb(255, 255, 255) !important;
+  background-color: rgb(215, 51, 40) !important;
+}
+.has-error .error-message {
+  color: rgb(215, 51, 40);
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+  font-weight: 500;
+}
+
+.checked .form-control {
+  border: 1px solid rgb(216, 219, 47);
+  background-color: rgba(216, 219, 47, 0.15);
+}
+.checked input[type=radio] {
+  border: 0.15rem solid rgb(216, 219, 47) !important;
 }/*# sourceMappingURL=main.css.map */
