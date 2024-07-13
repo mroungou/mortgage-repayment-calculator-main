@@ -84,10 +84,10 @@ function validateRadios(radios) {
     });
 
     if (!isChecked) {
-        hasError(radios[0].parentElement); // Assuming all radios have the same parent
+        hasError(radios[0].parentElement); 
         return false;
     } else {
-        hasNoError(radios[0].parentElement); // Assuming all radios have the same parent
+        hasNoError(radios[0].parentElement);
         return true;
     }
 }
