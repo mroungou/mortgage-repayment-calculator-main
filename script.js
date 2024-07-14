@@ -65,7 +65,7 @@ clearBtn.addEventListener('click', () => {
 
     radios.forEach(radio => {
         radio.checked = false;
-        hasNoError(radio.parentElement)
+        hasNoError(radio.parentElement.parentElement)
         radio.parentElement.parentElement.classList.remove('checked');
     })
 

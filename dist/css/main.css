@@ -224,6 +224,47 @@ body {
   font-weight: 700;
 }
 
+@media screen and (min-width: 768px) {
+  body {
+    background-color: rgb(228, 244, 253);
+  }
+  main {
+    background-color: #fff;
+    margin: 2.5rem;
+    border-radius: 24px;
+  }
+  .header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem 2.5rem;
+    margin: 0;
+  }
+  .header h1 {
+    margin-bottom: 0;
+  }
+  .header .clear-btn {
+    margin: auto 0 auto auto;
+  }
+  .calculator {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+    padding: 0 2.5rem;
+    margin: 0;
+    margin-bottom: 2.5rem;
+  }
+  .calculator .mortgage-amt, .calculator .mortgage-type {
+    grid-column: 1/-1;
+  }
+  .results {
+    padding: 2.5rem;
+    border-radius: 0px 0px 24px 24px;
+  }
+  .results .empty-results {
+    padding: 0;
+  }
+}
 .has-error input[type=text] {
   border-color: rgb(215, 51, 40);
 }
