@@ -57,7 +57,7 @@ body {
   display: grid;
 }
 .calculator .input-amt .label {
-  margin: auto auto auto 0.1rem;
+  margin: auto auto auto 0.05rem;
   font-weight: 700;
   font-size: 1.125rem;
   color: rgb(78, 110, 126);
@@ -83,7 +83,7 @@ body {
   padding: 0.95rem 1.2rem;
   border-radius: 4px 0 0 4px;
   z-index: 1;
-  margin: auto 0.1rem auto auto;
+  margin: auto 0.05rem auto auto;
 }
 .calculator .input-years .label, .calculator .input-years input {
   grid-area: 1/-1;
@@ -99,7 +99,7 @@ body {
   padding: 0.95rem 1.2rem;
   border-radius: 4px 0 0 4px;
   z-index: 1;
-  margin: auto 0.1rem auto auto;
+  margin: auto 0.05rem auto auto;
 }
 .calculator .input-rate .label, .calculator .input-rate input {
   grid-area: 1/-1;
@@ -198,20 +198,20 @@ body {
   border-radius: 8px;
   border-top: 4px solid rgb(216, 219, 47);
 }
+.pmt-amt .line {
+  border-bottom: 2px solid rgba(154, 190, 213, 0.25);
+  margin: 1rem 0;
+}
 .pmt-amt .monthly {
   color: rgb(154, 190, 213);
   font-size: 1rem;
 }
-.pmt-amt .monthly .monthly-pmt {
+.pmt-amt .monthly-pmt {
   display: block;
   font-size: 2.5rem;
   color: rgb(216, 219, 47);
   font-weight: 700;
   margin-top: 1rem;
-}
-.pmt-amt .line {
-  border-bottom: 2px solid rgba(154, 190, 213, 0.25);
-  margin: 1rem 0;
 }
 .pmt-amt .total {
   color: rgb(154, 190, 213);
@@ -235,7 +235,7 @@ body {
   }
   .header {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, auto);
     padding: 2rem 2.5rem;
     margin: 0;
   }
@@ -261,8 +261,41 @@ body {
     padding: 2.5rem;
     border-radius: 0px 0px 24px 24px;
   }
-  .results .empty-results {
+  .results .empty-results, .results .completed-results {
     padding: 0;
+  }
+  .pmt-amt .monthly-pmt {
+    font-size: 3.5rem;
+  }
+  .pmt-amt .line {
+    margin: 2rem 0;
+  }
+}
+@media screen and (min-width: 1440px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 4rem 12.5rem;
+  }
+  input:hover, input:focus {
+    cursor: pointer;
+    outline: none;
+    border: 1px solid rgb(216, 219, 47);
+  }
+  .clear-btn:hover {
+    cursor: pointer;
+  }
+  .results {
+    border-radius: 0px 24px 24px 80px;
+    display: flex;
+    align-items: center;
+  }
+  .results .completed-results {
+    align-self: baseline;
+  }
+  .btn-calculate {
+    grid-column: 1/-1;
+    width: 70%;
   }
 }
 .has-error input[type=text] {
@@ -285,4 +318,9 @@ body {
 }
 .checked input[type=radio] {
   border: 0.15rem solid rgb(216, 219, 47) !important;
+}
+
+.focused .label {
+  background-color: rgb(216, 219, 47) !important;
+  color: rgb(19, 48, 65) !important;
 }/*# sourceMappingURL=main.css.map */

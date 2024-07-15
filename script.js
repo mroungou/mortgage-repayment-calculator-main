@@ -11,6 +11,7 @@ const emptyResultsDiv = document.getElementById('empty-results');
 const completedResultsDiv = document.getElementById('completed-results');
 
 const inputs = document.querySelectorAll('input[type="text"]');
+const inputsArray = [...inputs];
 const radios = document.querySelectorAll('input[type="radio"]');
 
 function calculate() {
@@ -18,14 +19,16 @@ function calculate() {
     const interest = parseFloat(interestRate.value) / 100;
     const term = parseInt(yearsInput.value);
 
+    let monthlyPmt;
+
     if(interestOption.checked) {
-        const monthlyPmt = (interest * amt) / 12;
+        monthlyPmt = (interest * amt) / 12;
         monthlyPmtSpan.innerText = `${new Intl.NumberFormat('en-GB', {style: 'currency', currency: 'GBP'}).format(monthlyPmt)}`;
         totalPmtSpan.innerText = `${new Intl.NumberFormat('en-GB', {style: 'currency', currency: 'GBP'}).format(monthlyPmt * 12 * term)}`;
     } else if(repaymentOption.checked) {
         const r = interest / 12 // gives you the monthly interest rate
         const n = term * 12 // gives you the number of payments to be made
-        const monthlyPmt = amt * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+        monthlyPmt = amt * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
         monthlyPmtSpan.innerText = `${new Intl.NumberFormat('en-GB', {style: 'currency', currency: 'GBP'}).format(monthlyPmt)}`;
         totalPmtSpan.innerText = `${new Intl.NumberFormat('en-GB', {style: 'currency', currency: 'GBP'}).format(monthlyPmt * n)}`;
     }
@@ -106,6 +109,18 @@ repaymentOption.addEventListener('change', () => {
         interestOption.parentElement.parentElement.classList.remove('checked')
     }
 })
+
+inputsArray.forEach((input) => {
+    input.addEventListener('focus', () => {
+        input.parentElement.classList.add('focused');
+    });
+});
+
+inputsArray.forEach((input) => {
+    input.addEventListener('focusout', () => {
+        input.parentElement.classList.remove('focused');
+    });
+});
 
 calculateBtn.addEventListener('click', () => {
     let allInputFields = true;
